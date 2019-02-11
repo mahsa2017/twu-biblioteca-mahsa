@@ -10,6 +10,6 @@ public class Book {
         this.publicationYear=publicationYear;
     }
     public String getDescription(){
-        return "This book's name is " + this.title +" written by "+this.author;
+        return this.title +" | "+this.author+" | "+this.publicationYear;
     }
 }

@@ -7,6 +7,6 @@ public class BookTest {
     @Test
     public void testGetDescription() {
         Book book = new Book("something","Mircea","2012");
-        assertEquals("This book's name is something written by Mircea",book.getDescription());
+        assertEquals("something | Mircea | 2012",book.getDescription());
     }
 }
