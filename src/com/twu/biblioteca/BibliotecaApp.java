@@ -49,7 +49,7 @@ public class BibliotecaApp {
                     System.exit(0);
                 default:
                     //inform user in case of invalid choice.
-                    System.out.println("Invalid choice. Read the options carefully...");
+                    System.out.println("Invalid choice. please select a valid option...");
             }
         }
 
