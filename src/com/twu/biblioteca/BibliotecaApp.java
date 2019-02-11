@@ -26,7 +26,7 @@ public class BibliotecaApp {
             //Print the options for the user to choose from
             System.out.println("*****Available Options*****");
             System.out.println("*. Press 1 for List of Books");
-            System.out.println("*. Press 2 to exit");
+            System.out.println("*. Press 2 to quit");
             // Prompt the use to make a choice
             System.out.println("Enter your choice:");
 
