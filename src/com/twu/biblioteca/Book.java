@@ -4,6 +4,7 @@ public class Book {
     String title;
     String author;
     String publicationYear;
+    Boolean availability = true;
     public Book(String title,String author, String publicationYear){
         this.title=title;
         this.author=author;
