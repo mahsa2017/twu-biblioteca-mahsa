@@ -17,11 +17,16 @@ public class BibliotecaApp {
         Book book = new Book("Becoming","obama","2019");
 //        printer.print(book.getDescription());
         Book book1= new Book("john story","john","2000");
-        Book book2= new Book("jill story","jilla","2010");
+        Book book2= new Book("jill story","Ben","2010");
         Book book3= new Book("sara story","sara","2017");
 
         Book[] books = {book1,book2,book3};
 //        printer.print("The list of Books we have ");
+
+        Movie movie1 = new Movie("braveheart",2005, "Mel Gibson",10);
+        Movie movie2 = new Movie("titanic",2000, "james Cameron",8);
+        Movie movie3 = new Movie("pride and prejudice",1990,"sara loyd",4);
+        Movie movie4 = new Movie("hangover",2012,"george blue",1);
 
 
          //declare a variable that will store the user input
