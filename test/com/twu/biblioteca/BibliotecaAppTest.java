@@ -12,7 +12,7 @@ public class BibliotecaAppTest {
         Reader reader = mock(Reader.class);
 
         when(reader.read()).thenReturn("1");
-        when(reader.read()).thenReturn("3");
+        when(reader.read()).thenReturn("4");
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp(printer,reader);
         bibliotecaApp.launchApp();
@@ -31,7 +31,7 @@ public class BibliotecaAppTest {
         when(reader.read()).thenReturn("2");
         when(reader.read()).thenReturn("john story");
         when(reader.read()).thenReturn("1");
-        when(reader.read()).thenReturn("3");
+        when(reader.read()).thenReturn("4");
 
 
         BibliotecaApp bibliotecaApp = new BibliotecaApp(printer,reader);

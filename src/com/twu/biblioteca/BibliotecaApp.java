@@ -36,6 +36,8 @@ public class BibliotecaApp {
             printer.print("*****Available Options*****");
             printer.print("*. Press 1 for List of Books");
             printer.print("*. Press 2 to checkout");
+            printer.print("*. Press 3 to checkIn");
+            printer.print("*. Press 4 to exit");
             // Prompt the use to make a choice
             printer.print("Enter your choice:");
 
@@ -64,7 +66,14 @@ public class BibliotecaApp {
                    // Read more: https://javarevisited.blogspot.com/2012/11/4-ways-to-search-object-in-java-array-example.html#ixzz5fkzAncjB
                     this.checkOut(specificBook);
                     break;
-                case "3":
+                case "3" :
+                    printer.print("return a book");
+                    printer.print("which book do you wanna return?");
+                    String bookToReturn=reader.read();
+                    Book BookReturn =this.searchBook(bookToReturn, books);
+                    this.checkIn(BookReturn);
+                    break;
+                case "4":
                     //exit from the program
                     printer.print("Exiting...");
                     return;
@@ -97,6 +106,16 @@ public class BibliotecaApp {
                 }
             }
             return null;
+        }
+        void checkIn(Book book){
+            if(book == null){
+                printer.print("that is not a valid book to return");
+                return;
+            }
+            if(!book.availability){
+                book.availability = true;
+                printer.print("Thank you for returning the book");
+            }
         }
     public static void main(String[] args) {
         BibliotecaApp bibliotecaApp = new BibliotecaApp(new Printer(),new Reader());
