@@ -5,6 +5,7 @@ import java.util.Scanner; // import the Scanner class
 public class BibliotecaApp {
     Printer printer; //field
     Reader reader;
+    Boolean loggedIn = false;
 
     //constructor
     public BibliotecaApp(Printer printer,Reader reader) {
@@ -12,7 +13,23 @@ public class BibliotecaApp {
         this.reader=reader;
     }
     void launchApp() {
+        String libraryNum;
+        String passWord;
+        Admin admin= new Admin(printer);
+        User user1 = new User("123-1234","123456","sara","sara@yahoo.com","0447427");
+        User user2 = new User("567-5678","567891","jack","jack@yahoo.com","043456");
+
+        User[] users = {user1,user2};
+
         printer.print("Welcome to Biblioteca. Your one-stop-shop for great book titles in Bangalore!");
+        while(!loggedIn){
+            printer.print("please Login first: Enter your library number");
+            libraryNum = reader.read();
+            printer.print("please Login first: Enter your password");
+            passWord = reader.read();
+            this.loggedIn = admin.login(users,libraryNum,passWord);
+
+        }
 //
         Book book = new Book("Becoming","obama","2019");
 //        printer.print(book.getDescription());
@@ -27,6 +44,7 @@ public class BibliotecaApp {
         Movie movie2 = new Movie("titanic",2000, "james Cameron",8);
         Movie movie3 = new Movie("pride and prejudice",1990,"sara loyd",4);
         Movie movie4 = new Movie("hangover",2012,"george blue",1);
+
 
 
          //declare a variable that will store the user input
@@ -56,7 +74,7 @@ public class BibliotecaApp {
 //                    printer.print("done with job number 1");
                     printer.print("List of Books is: " );
                     for(int i=0;i<books.length;i++){
-                        if(books[i].availability)
+                        if(books[i].getAvailabilty())
                         printer.print(books[i].getDescription());
                     }
                     break;
@@ -94,18 +112,18 @@ public class BibliotecaApp {
             printer.print("sorry, That book is not available");
         return;
         }
-        if(book.availability){
-            book.availability = false;
+        if(book.getAvailabilty()){
+            book.setAvailabilty(false);
             printer.print("Thank you, Enjoy the book");
         }
         }
 
         Book searchBook(String bookName,Book[] books){
-            Book book = new Book("Becoming","obama","2019");
+//            Book book = new Book("Becoming","obama","2019");
             for(Book item: books) {
 //                printer.print(item.title);
 //                printer.print(bookName);
-                if ((item.title).equals(bookName)) {
+                if ((item.getTitle()).equals(bookName)) {
 //                    printer.print("hi");
                     return item;
                 }
@@ -117,8 +135,8 @@ public class BibliotecaApp {
                 printer.print("that is not a valid book to return");
                 return;
             }
-            if(!book.availability){
-                book.availability = true;
+            if(!book.getAvailabilty()){
+                book.setAvailabilty(true);
                 printer.print("Thank you for returning the book");
             }
         }

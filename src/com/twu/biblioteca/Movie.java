@@ -2,7 +2,7 @@ package com.twu.biblioteca;
 
 public class Movie {
     String name;
-    Integer year;
+    int year;
     String director;
     int rating;//1-10 or unrated?
     public Movie(String name,Integer year,String director,int rating){
